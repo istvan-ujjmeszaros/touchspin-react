@@ -2,16 +2,15 @@
   "name": "touchspin-react-workspace",
   "private": true,
   "version": "1.0.0",
-  "packageManager": "yarn@4.10.3",
   "workspaces": [
     "packages/react",
     "packages/examples"
   ],
   "scripts": {
-    "build": "yarn workspace @touchspin/react build",
-    "test": "yarn workspace @touchspin/react test:unit",
-    "test:watch": "yarn workspace @touchspin/react test:unit:watch",
-    "test:coverage": "yarn workspace @touchspin/react test:coverage",
-    "dev": "yarn workspace touchspin-react-examples dev"
+    "build": "npm run build -w @touchspin/react",
+    "test": "npm run test:unit -w @touchspin/react",
+    "test:watch": "npm run test:unit:watch -w @touchspin/react",
+    "test:coverage": "npm run test:coverage -w @touchspin/react",
+    "dev": "npm run dev -w touchspin-react-examples"
   }
 }
