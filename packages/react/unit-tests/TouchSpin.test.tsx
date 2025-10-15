@@ -3,7 +3,7 @@
  * Comprehensive test suite covering controlled/uncontrolled behavior and edge cases
  */
 
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { VanillaRenderer } from '@touchspin/renderer-vanilla';
 import { useRef, useState } from 'react';
@@ -39,6 +39,8 @@ describe('TouchSpin React Component', () => {
 
   describe('controlled value', () => {
     it('should update when controlled value changes', async () => {
+      const user = userEvent.setup();
+
       function TestComponent() {
         const [value, setValue] = useState(10);
 
@@ -58,7 +60,9 @@ describe('TouchSpin React Component', () => {
       expect(input).toHaveValue(10);
 
       const button = screen.getByRole('button', { name: 'Update' });
-      await userEvent.click(button);
+      await act(async () => {
+        await user.click(button);
+      });
 
       await waitFor(() => {
         expect(input).toHaveValue(20);
@@ -66,6 +70,7 @@ describe('TouchSpin React Component', () => {
     });
 
     it('should call onChange when user interacts', async () => {
+      const user = userEvent.setup();
       const handleChange = vi.fn();
 
       render(
@@ -80,11 +85,11 @@ describe('TouchSpin React Component', () => {
       const input = screen.getByTestId('test-spin-input') as HTMLInputElement;
 
       // Simulate user typing
-      await userEvent.clear(input);
-      await userEvent.type(input, '25');
-
-      // Blur to trigger change event
-      input.blur();
+      await act(async () => {
+        await user.clear(input);
+        await user.type(input, '25');
+        input.blur();
+      });
 
       // Wait for onChange to be called
       await waitFor(() => {
@@ -109,6 +114,7 @@ describe('TouchSpin React Component', () => {
 
   describe('uncontrolled value', () => {
     it('should maintain internal state', async () => {
+      const user = userEvent.setup();
       const handleChange = vi.fn();
 
       render(
@@ -124,11 +130,11 @@ describe('TouchSpin React Component', () => {
       expect(input).toHaveValue(10);
 
       // Simulate user typing
-      await userEvent.clear(input);
-      await userEvent.type(input, '20');
-
-      // Blur to trigger change event
-      input.blur();
+      await act(async () => {
+        await user.clear(input);
+        await user.type(input, '20');
+        input.blur();
+      });
 
       await waitFor(() => {
         expect(handleChange).toHaveBeenCalled();
@@ -185,7 +191,9 @@ describe('TouchSpin React Component', () => {
   });
 
   describe('imperative methods', () => {
-    it('should expose focus method', () => {
+    it('should expose focus method', async () => {
+      const user = userEvent.setup();
+
       function TestComponent() {
         const ref = useRef<TouchSpinHandle>(null);
 
@@ -206,13 +214,15 @@ describe('TouchSpin React Component', () => {
 
       expect(document.activeElement).not.toBe(input);
 
-      userEvent.click(button);
+      await user.click(button);
 
       // Note: jsdom doesn't fully support focus, so we just check the method doesn't throw
       expect(input).toBeInTheDocument();
     });
 
     it('should expose getValue method', async () => {
+      const user = userEvent.setup();
+
       function TestComponent() {
         const ref = useRef<TouchSpinHandle>(null);
         const [displayValue, setDisplayValue] = useState<number | null>(null);
@@ -236,7 +246,9 @@ describe('TouchSpin React Component', () => {
       render(<TestComponent />);
 
       const button = screen.getByRole('button', { name: 'Get Value' });
-      await userEvent.click(button);
+      await act(async () => {
+        await user.click(button);
+      });
 
       const display = screen.getByTestId('display-value');
       await waitFor(() => {
@@ -245,6 +257,8 @@ describe('TouchSpin React Component', () => {
     });
 
     it('should expose setValue method', async () => {
+      const user = userEvent.setup();
+
       function TestComponent() {
         const ref = useRef<TouchSpinHandle>(null);
 
@@ -269,7 +283,9 @@ describe('TouchSpin React Component', () => {
       expect(input).toHaveValue(10);
 
       const button = screen.getByRole('button', { name: 'Set Value' });
-      await userEvent.click(button);
+      await act(async () => {
+        await user.click(button);
+      });
 
       await waitFor(() => {
         expect(input).toHaveValue(99);
@@ -308,6 +324,7 @@ describe('TouchSpin React Component', () => {
 
   describe('edge cases', () => {
     it('should handle NaN input gracefully', async () => {
+      const user = userEvent.setup();
       const handleChange = vi.fn();
 
       render(
@@ -322,8 +339,10 @@ describe('TouchSpin React Component', () => {
       const input = screen.getByTestId('test-spin-input') as HTMLInputElement;
 
       // Try to set NaN value
-      await userEvent.clear(input);
-      await userEvent.type(input, 'not-a-number');
+      await act(async () => {
+        await user.clear(input);
+        await user.type(input, 'not-a-number');
+      });
 
       // onChange should not be called with NaN
       await waitFor(() => {
@@ -334,6 +353,8 @@ describe('TouchSpin React Component', () => {
     });
 
     it('should handle controlled to uncontrolled transition', async () => {
+      const user = userEvent.setup();
+
       function TestComponent() {
         const [value, _setValue] = useState<number>(50);
         const [showValue, setShowValue] = useState(true);
@@ -359,7 +380,9 @@ describe('TouchSpin React Component', () => {
       expect(input).toHaveValue(50);
 
       const button = screen.getByRole('button', { name: 'Clear' });
-      await userEvent.click(button);
+      await act(async () => {
+        await user.click(button);
+      });
 
       // Should fallback to defaultValue
       await waitFor(() => {
@@ -387,6 +410,8 @@ describe('TouchSpin React Component', () => {
     });
 
     it('should handle rapid value updates', async () => {
+      const user = userEvent.setup();
+
       function TestComponent() {
         const [value, setValue] = useState(10);
 
@@ -413,7 +438,9 @@ describe('TouchSpin React Component', () => {
       expect(input).toHaveValue(10);
 
       const button = screen.getByRole('button', { name: 'Rapid Update' });
-      await userEvent.click(button);
+      await act(async () => {
+        await user.click(button);
+      });
 
       await waitFor(() => {
         expect(input).toHaveValue(40);
