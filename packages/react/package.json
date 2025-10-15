@@ -43,6 +43,7 @@
     "build:watch": "tsup --watch",
     "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist",
     "clean": "rm -rf dist",
+    "test": "vitest run",
     "test:unit": "vitest",
     "test:unit:watch": "vitest --watch",
     "test:coverage": "vitest --coverage"
