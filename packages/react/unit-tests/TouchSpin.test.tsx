@@ -66,7 +66,7 @@ describe('TouchSpin React Component', () => {
     });
 
     it('should call onChange when user interacts', async () => {
-      const handleChange = jest.fn();
+      const handleChange = vi.fn();
 
       render(
         <TouchSpinComponent
@@ -82,6 +82,9 @@ describe('TouchSpin React Component', () => {
       // Simulate user typing
       await userEvent.clear(input);
       await userEvent.type(input, '25');
+
+      // Blur to trigger change event
+      input.blur();
 
       // Wait for onChange to be called
       await waitFor(() => {
@@ -106,7 +109,7 @@ describe('TouchSpin React Component', () => {
 
   describe('uncontrolled value', () => {
     it('should maintain internal state', async () => {
-      const handleChange = jest.fn();
+      const handleChange = vi.fn();
 
       render(
         <TouchSpinComponent
@@ -123,6 +126,9 @@ describe('TouchSpin React Component', () => {
       // Simulate user typing
       await userEvent.clear(input);
       await userEvent.type(input, '20');
+
+      // Blur to trigger change event
+      input.blur();
 
       await waitFor(() => {
         expect(handleChange).toHaveBeenCalled();
@@ -302,7 +308,7 @@ describe('TouchSpin React Component', () => {
 
   describe('edge cases', () => {
     it('should handle NaN input gracefully', async () => {
-      const handleChange = jest.fn();
+      const handleChange = vi.fn();
 
       render(
         <TouchSpinComponent
