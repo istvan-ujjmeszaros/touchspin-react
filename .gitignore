@@ -1,5 +1,11 @@
+# Dependencies
 node_modules/
+
+# Build outputs
 dist/
+.vite
+
+# Yarn
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -7,7 +13,34 @@ dist/
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+# Testing
 coverage/
+
+# Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
 .DS_Store
-.vite
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
