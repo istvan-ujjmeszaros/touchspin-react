@@ -21,21 +21,5 @@ module.exports = {
     ['@babel/preset-react', { runtime: 'automatic' }],
     '@babel/preset-typescript',
   ],
-  plugins: [
-    stripJsExtensions,
-    [
-      'module-resolver',
-      {
-        alias: {
-          '^@touchspin/react$': './src/index',
-          '^@touchspin/core$': '../../../packages/core/src/index',
-          '^@touchspin/core/(.+)$': '../../../packages/core/src/\\1',
-          '^@touchspin/renderer-vanilla$':
-            '../../../packages/renderers/vanilla/src/VanillaRenderer',
-          '^@touchspin/renderer-(.+)$': '../../../packages/renderers/\\1/src/\\1Renderer',
-        },
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    ],
-  ],
+  plugins: [stripJsExtensions],
 };
