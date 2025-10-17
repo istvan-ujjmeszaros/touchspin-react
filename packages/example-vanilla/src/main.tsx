@@ -137,6 +137,7 @@ function App() {
           onSubmit={(event) => {
             event.preventDefault();
             setFormSubmitted(true);
+            alert(`Form submitted with value: ${formValue}`);
           }}
           onReset={() => {
             setFormValue(12);
@@ -267,7 +268,7 @@ function App() {
             type="button"
             onClick={() => {
               const current = imperativeRef.current?.getValue();
-              appendEventLog(`imperative getValue() → ${current}`);
+              console.log(`imperative getValue() → ${current}`);
             }}
           >
             Log getValue()
