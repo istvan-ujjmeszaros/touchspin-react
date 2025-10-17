@@ -1,5 +1,13 @@
 # @touchspin/react
 
+## 0.0.0-alpha-20251017021912
+
+### Patch Changes
+
+- - Fixed a bug where the component would lose focus on every value change.
+  - Updated `@touchspin` dependencies to their latest versions.
+  - Improved the example application by fixing the "Log getValue()" button and adding an alert to the "Submit" button.
+
 ## 5.0.1-alpha.0
 
 ### Patch Changes
@@ -9,6 +17,7 @@
   This is the first alpha release of TouchSpin v5, featuring a completely rewritten architecture:
 
   **New Features:**
+
   - Modular renderer system (Bootstrap 3/4/5, Tailwind, Vanilla CSS)
   - React adapter with per-renderer subpath exports
   - Standalone, jQuery, and Web Component adapters
@@ -18,6 +27,7 @@
   - Enhanced accessibility (ARIA compliance)
 
   **Breaking Changes:**
+
   - Complete API redesign from v4.x
   - New package structure with scoped @touchspin/\* packages
   - Renamed main package from `bootstrap-touchspin` to `@touchspin/core`

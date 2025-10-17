@@ -78,19 +78,7 @@ export function useTouchSpin(options: UseTouchSpinOptions) {
       instanceRef.current?.destroy();
       instanceRef.current = null;
     };
-  }, [
-    renderer,
-    coreOptions,
-    currentValue,
-    decimals,
-    isControlled,
-    max,
-    min,
-    onChange,
-    prefix,
-    step,
-    suffix,
-  ]); // Only re-mount if renderer changes
+  }, [renderer, coreOptions, isControlled, onChange]); // Only re-mount on fundamental changes
 
   // Update value when controlled value changes
   useEffect(() => {
