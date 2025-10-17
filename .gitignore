@@ -12,7 +12,7 @@ dist/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-!.yarn/install-state.gz
+# .yarn/install-state.gz (ignored by default)
 .pnp.*
 
 # Testing
