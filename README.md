@@ -48,7 +48,7 @@ yarn test
 
 ## Examples
 
-See `packages/examples/` for a rich vanilla renderer demo.
+See `packages/example-vanilla/` for a rich vanilla renderer demo.
 
 ```bash
 yarn dev

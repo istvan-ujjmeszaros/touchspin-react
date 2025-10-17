@@ -4515,9 +4515,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"touchspin-react-examples@workspace:packages/examples":
+"touchspin-react-examples@workspace:packages/example-vanilla":
   version: 0.0.0-use.local
-  resolution: "touchspin-react-examples@workspace:packages/examples"
+  resolution: "touchspin-react-examples@workspace:packages/example-vanilla"
   dependencies:
     "@touchspin/react": "workspace:*"
     "@types/react": "npm:^18.3.18"
