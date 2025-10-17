@@ -5,7 +5,7 @@ React adapter for TouchSpin numeric input spinner (v5.0.1-alpha.0)
 ## Installation
 
 ```bash
-npm install @touchspin/react@alpha @touchspin/core@alpha
+yarn add @touchspin/react@alpha @touchspin/core@alpha
 ```
 
 ## Usage
@@ -48,7 +48,11 @@ yarn test
 
 ## Examples
 
-See `packages/examples/` for full examples.
+See `packages/examples/` for a rich vanilla renderer demo.
+
+```bash
+yarn dev
+```
 
 ## License
 

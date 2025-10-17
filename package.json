@@ -7,16 +7,18 @@
     "packages/examples"
   ],
   "scripts": {
-    "build": "npm run build -w @touchspin/react",
-    "test": "npm run test:unit -w @touchspin/react",
-    "test:watch": "npm run test:unit:watch -w @touchspin/react",
-    "test:coverage": "npm run test:coverage -w @touchspin/react",
-    "dev": "npm run dev -w touchspin-react-examples"
+    "build": "yarn workspace @touchspin/react build",
+    "test": "yarn workspace @touchspin/react test:unit",
+    "test:watch": "yarn workspace @touchspin/react test:unit:watch",
+    "test:coverage": "yarn workspace @touchspin/react test:coverage",
+    "dev": "yarn workspace touchspin-react-examples dev"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.7",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "jsdom": "^27.0.0",
     "vitest": "^3.2.4"
-  }
+  },
+  "packageManager": "yarn@4.10.3"
 }
