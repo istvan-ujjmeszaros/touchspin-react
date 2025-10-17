@@ -7,11 +7,11 @@
     "packages/example-vanilla"
   ],
   "scripts": {
-    "build": "yarn workspace @touchspin/react build",
-    "test": "yarn workspace @touchspin/react test:unit",
-    "test:watch": "yarn workspace @touchspin/react test:unit:watch",
-    "test:coverage": "yarn workspace @touchspin/react test:coverage",
-    "dev": "yarn workspace touchspin-react-examples dev"
+    "dev": "vite",
+    "build": "vite build",
+    "changeset": "changeset",
+    "version-packages": "changeset version && yarn install",
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
