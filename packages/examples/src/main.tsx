@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import TouchSpin, { TouchSpinHandle } from '@touchspin/react/vanilla';
-import '@touchspin/renderer-vanilla/dist/touchspin-vanilla.css';
+import '@touchspin/renderer-vanilla/css';
 import './styles.css';
 
 type EventEntry = {
