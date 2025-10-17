@@ -7,8 +7,9 @@
     "packages/example-vanilla"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "yarn workspace touchspin-react-examples dev",
+    "build": "yarn workspaces foreach -At run build",
+    "test": "yarn workspaces foreach -At run test",
     "changeset": "changeset",
     "version-packages": "changeset version && yarn install",
     "release": "changeset publish"

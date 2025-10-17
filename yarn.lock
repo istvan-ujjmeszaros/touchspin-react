@@ -1168,6 +1168,11 @@ __metadata:
     "@testing-library/react": "npm:^14.1.2"
     "@testing-library/user-event": "npm:^14.5.1"
     "@touchspin/core": "npm:5.0.1-alpha.2"
+    "@touchspin/renderer-bootstrap3": "npm:^5.0.1-alpha.3"
+    "@touchspin/renderer-bootstrap4": "npm:^5.0.1-alpha.3"
+    "@touchspin/renderer-bootstrap5": "npm:^5.0.1-alpha.3"
+    "@touchspin/renderer-tailwind": "npm:^5.0.1-alpha.3"
+    "@touchspin/renderer-vanilla": "npm:^5.0.1-alpha.4"
     "@types/node": "npm:^22.7.4"
     "@types/react": "npm:^18.2.0"
     "@vitest/coverage-v8": "npm:^3.2.4"
@@ -1199,6 +1204,77 @@ __metadata:
       optional: true
   languageName: unknown
   linkType: soft
+
+"@touchspin/renderer-bootstrap3@npm:^5.0.1-alpha.3":
+  version: 5.0.1-alpha.3
+  resolution: "@touchspin/renderer-bootstrap3@npm:5.0.1-alpha.3"
+  dependencies:
+    "@touchspin/core": "npm:5.0.1-alpha.2"
+  peerDependencies:
+    bootstrap: ">=3.4.0 <4"
+    jquery: ">=1.9.0"
+  peerDependenciesMeta:
+    jquery:
+      optional: true
+  checksum: 10c0/e863bd12fa787ee9aa7c5c33d8a3a61ffebf7396b40c7a9345788dd7fc7b597c30fc00712350ea464ed96ee3dfebfa61e9a3dd0546d26b090064c33c6bf269c8
+  languageName: node
+  linkType: hard
+
+"@touchspin/renderer-bootstrap4@npm:^5.0.1-alpha.3":
+  version: 5.0.1-alpha.3
+  resolution: "@touchspin/renderer-bootstrap4@npm:5.0.1-alpha.3"
+  dependencies:
+    "@touchspin/core": "npm:5.0.1-alpha.2"
+  peerDependencies:
+    bootstrap: ">=4.6.0 <5"
+    jquery: ">=3.5.0"
+    popper.js: ">=1.16.1"
+  peerDependenciesMeta:
+    jquery:
+      optional: true
+    popper.js:
+      optional: true
+  checksum: 10c0/45b1a581362168c515257ee0c9eae3d071bb3b85979256137e74ed1dd88c6fd44acd487cd8d666c8c480f2ed178d7085912cd953fd828d31207e0b8504f73df1
+  languageName: node
+  linkType: hard
+
+"@touchspin/renderer-bootstrap5@npm:^5.0.1-alpha.3":
+  version: 5.0.1-alpha.3
+  resolution: "@touchspin/renderer-bootstrap5@npm:5.0.1-alpha.3"
+  dependencies:
+    "@touchspin/core": "npm:5.0.1-alpha.2"
+  peerDependencies:
+    "@popperjs/core": ">=2.11.8"
+    bootstrap: ">=5.3.0 <6"
+  peerDependenciesMeta:
+    "@popperjs/core":
+      optional: true
+  checksum: 10c0/876b067624e8eb98df824aab5292e92a94cfe45a9620d4ee15d9573540f11162a2bf08442d36fc990b1362858dbc349f8b521b871474e4fe42a1d02f84ee0c99
+  languageName: node
+  linkType: hard
+
+"@touchspin/renderer-tailwind@npm:^5.0.1-alpha.3":
+  version: 5.0.1-alpha.3
+  resolution: "@touchspin/renderer-tailwind@npm:5.0.1-alpha.3"
+  dependencies:
+    "@touchspin/core": "npm:5.0.1-alpha.2"
+  peerDependencies:
+    tailwindcss: ">=3.0.0"
+  peerDependenciesMeta:
+    tailwindcss:
+      optional: true
+  checksum: 10c0/e67893db6c7c07961d456a65efbbecd8bfed85556d6fdf91072effe9e34af8ff273375cd906fa2f06b58463d78e8bbdb6c6d793aa16c754c90b216507f0faf29
+  languageName: node
+  linkType: hard
+
+"@touchspin/renderer-vanilla@npm:^5.0.1-alpha.4":
+  version: 5.0.1-alpha.4
+  resolution: "@touchspin/renderer-vanilla@npm:5.0.1-alpha.4"
+  dependencies:
+    "@touchspin/core": "npm:5.0.1-alpha.2"
+  checksum: 10c0/51b9f995fd6fcbfa4558476f828fb56d7405bd064dcd2811b98d0a3a2255b2b92ae6e06bef21849d97fb415363d22189023d6a2296fb3ce69815a9b203fa74a2
+  languageName: node
+  linkType: hard
 
 "@types/aria-query@npm:^5.0.1":
   version: 5.0.4

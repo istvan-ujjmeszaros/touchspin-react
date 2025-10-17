@@ -20,18 +20,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+      - name: Enable Corepack shims
+        run: corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - run: corepack enable
-
-      - run: yarn install --immutable
-
+          cache: yarn
+          cache-dependency-path: |
+            yarn.lock
+            .yarn/install-state.gz
+      - name: Activate workspace Yarn
+        run: |
+          corepack enable
+          corepack prepare "$(node -p "require('./package.json').packageManager")" --activate
+      - name: Install dependencies
+        run: yarn install --immutable
       - name: Run tests
         run: yarn test
-
       - name: Build package
         run: yarn build
 
@@ -41,16 +46,23 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
-
+      - name: Enable Corepack shims
+        run: corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - run: corepack enable
-
-      - run: yarn install --immutable
-
-      - run: yarn build
+          cache: yarn
+          cache-dependency-path: |
+            yarn.lock
+            .yarn/install-state.gz
+      - name: Activate workspace Yarn
+        run: |
+          corepack enable
+          corepack prepare "$(node -p "require('./package.json').packageManager")" --activate
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Build package
+        run: yarn build
 
       - name: Publish with Changesets
         uses: changesets/action@v1
