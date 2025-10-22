@@ -49,13 +49,13 @@
     "test:coverage": "vitest --coverage"
   },
   "peerDependencies": {
-  "@touchspin/renderer-bootstrap3": "5.0.1",
-  "@touchspin/renderer-bootstrap4": "5.0.1",
-  "@touchspin/renderer-bootstrap5": "5.0.1",
-  "@touchspin/renderer-tailwind": "5.0.1",
-  "@touchspin/renderer-vanilla": "5.0.1",
-  "react": ">=16.8.0 || ^17.0.0 || ^18.0.0",
-  "react-dom": ">=16.8.0 || ^17.0.0 || ^18.0.0"
+    "@touchspin/renderer-bootstrap3": "5.0.1",
+    "@touchspin/renderer-bootstrap4": "5.0.1",
+    "@touchspin/renderer-bootstrap5": "5.0.1",
+    "@touchspin/renderer-tailwind": "5.0.1",
+    "@touchspin/renderer-vanilla": "5.0.1",
+    "react": ">=16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": ">=16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "peerDependenciesMeta": {
     "@touchspin/renderer-bootstrap3": {
@@ -75,7 +75,7 @@
     }
   },
   "dependencies": {
-  "@touchspin/core": "5.0.1"
+    "@touchspin/core": "5.0.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
