@@ -8,6 +8,7 @@
 import React, { forwardRef, useImperativeHandle } from 'react';
 import { useTouchSpin } from './hooks/useTouchSpin.js';
 import type { TouchSpinHandle, TouchSpinProps } from './types.js';
+import type { TouchSpinCoreOptions } from '@touchspin/core';
 
 export interface TouchSpinComponentProps extends TouchSpinProps {
   renderer: any;
@@ -97,26 +98,38 @@ export const TouchSpinComponent = forwardRef<TouchSpinHandle, TouchSpinComponent
 
     // Expose imperative handle
     useImperativeHandle(
-      ref,
-      () => ({
-        focus: () => {
-          inputRef.current?.focus();
-        },
-        blur: () => {
-          inputRef.current?.blur();
-        },
-        increment: () => {
-          instanceRef.current?.upOnce();
-        },
-        decrement: () => {
-          instanceRef.current?.downOnce();
-        },
-        getValue: () => {
-          return instanceRef.current?.getValue() ?? currentValue;
-        },
-        setValue: (val: number) => {
-          instanceRef.current?.setValue(val);
-        },
+    ref,
+    () => ({
+    focus: () => {
+    inputRef.current?.focus();
+    },
+    blur: () => {
+    inputRef.current?.blur();
+    },
+    increment: () => {
+    instanceRef.current?.upOnce();
+    },
+    decrement: () => {
+    instanceRef.current?.downOnce();
+    },
+    getValue: () => {
+    return instanceRef.current?.getValue() ?? currentValue;
+    },
+    setValue: (val: number) => {
+    instanceRef.current?.setValue(val);
+    },
+      startUpSpin: () => {
+        instanceRef.current?.startUpSpin();
+    },
+    startDownSpin: () => {
+      instanceRef.current?.startDownSpin();
+    },
+    stopSpin: () => {
+      instanceRef.current?.stopSpin();
+    },
+      updateSettings: (opts: Partial<TouchSpinCoreOptions>) => {
+      instanceRef.current?.updateSettings(opts);
+      },
       }),
       [
         currentValue,
@@ -126,6 +139,10 @@ export const TouchSpinComponent = forwardRef<TouchSpinHandle, TouchSpinComponent
         instanceRef.current?.getValue,
         instanceRef.current?.setValue,
         instanceRef.current?.upOnce,
+        instanceRef.current?.startUpSpin,
+        instanceRef.current?.startDownSpin,
+        instanceRef.current?.stopSpin,
+        instanceRef.current?.updateSettings,
       ]
     );
 

@@ -70,13 +70,17 @@ export interface TouchSpinProps {
 }
 
 /**
- * Imperative handle API exposed via forwardRef
- */
+* Imperative handle API exposed via forwardRef
+*/
 export interface TouchSpinHandle {
-  focus(): void;
-  blur(): void;
-  increment(): void;
-  decrement(): void;
-  getValue(): number;
-  setValue(value: number): void;
+focus(): void;
+blur(): void;
+increment(): void;
+decrement(): void;
+getValue(): number;
+setValue(value: number): void;
+  startUpSpin(): void;
+  startDownSpin(): void;
+  stopSpin(): void;
+  updateSettings(opts: Partial<TouchSpinCoreOptions>): void;
 }
