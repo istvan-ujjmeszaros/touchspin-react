@@ -5,17 +5,26 @@ React adapter for TouchSpin with per-renderer subpaths, controlled/uncontrolled 
 ## Installation
 
 ```bash
-npm install @touchspin/react react react-dom
+npm install @touchspin/react @touchspin/renderer-vanilla react react-dom
 ```
 
 ## Per-Renderer Imports
 
 ```tsx
 import TouchSpin from '@touchspin/react/bootstrap5';
+import '@touchspin/renderer-bootstrap5/css';
+
 import TouchSpin from '@touchspin/react/bootstrap4';
+import '@touchspin/renderer-bootstrap4/css';
+
 import TouchSpin from '@touchspin/react/bootstrap3';
+import '@touchspin/renderer-bootstrap3/css';
+
 import TouchSpin from '@touchspin/react/tailwind';
+import '@touchspin/renderer-tailwind/css';
+
 import TouchSpin from '@touchspin/react/vanilla';
+import '@touchspin/renderer-vanilla/css';
 ```
 
 ## Usage

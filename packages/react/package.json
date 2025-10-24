@@ -54,8 +54,8 @@
     "@touchspin/renderer-bootstrap5": "5.0.1",
     "@touchspin/renderer-tailwind": "5.0.1",
     "@touchspin/renderer-vanilla": "5.0.1",
-    "react": ">=16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": ">=16.8.0 || ^17.0.0 || ^18.0.0"
+    "react": ">=16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": ">=16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "peerDependenciesMeta": {
     "@touchspin/renderer-bootstrap3": {
@@ -78,22 +78,22 @@
     "@touchspin/core": "5.0.1"
   },
   "devDependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.1.5",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@touchspin/renderer-bootstrap3": "^5.0.1",
     "@touchspin/renderer-bootstrap4": "^5.0.1",
     "@touchspin/renderer-bootstrap5": "^5.0.1",
     "@touchspin/renderer-tailwind": "^5.0.1",
     "@touchspin/renderer-vanilla": "^5.0.1",
     "@types/node": "^22.7.4",
-    "@types/react": "^18.2.0",
+    "@types/react": "^19.1.16",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "jsdom": "^27.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0",
     "vitest": "^3.2.4"
