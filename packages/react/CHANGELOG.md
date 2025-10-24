@@ -1,5 +1,12 @@
 # @touchspin/react
 
+## 5.0.0
+
+### Patch Changes
+
+- 841ab03: Promote the React adapter to its first stable v5.0.0 release, aligned with the TouchSpin 5 renderer ecosystem and ready for npm consumers.
+- dbd362e: Update dependencies to stable TouchSpin 5.0.1 release
+
 ## 0.0.0-alpha-20251017021912
 
 ### Patch Changes
