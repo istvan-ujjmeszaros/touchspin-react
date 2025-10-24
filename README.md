@@ -12,7 +12,7 @@ React adapter for TouchSpin numeric input spinner - A feature-rich, accessible n
 - Customizable - Extensive styling and behavior options
 - Reactive & Imperative - Both declarative props and direct API control
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install @touchspin/react @touchspin/core
@@ -401,14 +401,26 @@ yarn lint
 
 ## Related Packages
 
-- **@touchspin/core** - Core TouchSpin logic
+### Core
+- **@touchspin/core** - Core TouchSpin logic and API
+
+### Renderers
 - **@touchspin/renderer-vanilla** - Vanilla CSS renderer
+- **@touchspin/renderer-bootstrap3** - Bootstrap 3 renderer
+- **@touchspin/renderer-bootstrap4** - Bootstrap 4 renderer
 - **@touchspin/renderer-bootstrap5** - Bootstrap 5 renderer
 - **@touchspin/renderer-tailwind** - Tailwind CSS renderer
 
+### Adapters
+- **@touchspin/angular** - Angular adapter
+- **@touchspin/react** - React adapter (this package)
+- **@touchspin/jquery** - jQuery plugin
+- **@touchspin/webcomponent** - Web Components
+- **@touchspin/standalone** - Standalone bundle
+
 ## Contributing
 
-Contributions welcome! Please see the main TouchSpin repository for contribution guidelines.
+Contributions welcome! Please see the [main TouchSpin repository](https://github.com/istvan-ujjmeszaros/touchspin) for [contribution guidelines](https://github.com/istvan-ujjmeszaros/touchspin/blob/main/CONTRIBUTING.md).
 
 ## License
 
