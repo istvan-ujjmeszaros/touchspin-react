@@ -1,5 +1,12 @@
 # touchspin-react-examples
 
+## 0.0.1
+
+### Patch Changes
+
+- Updated dependencies [ab9e6f1]
+  - @touchspin/react@5.1.0
+
 ## 0.0.0
 
 ### Patch Changes
