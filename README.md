@@ -1,19 +1,16 @@
 # TouchSpin React
 
-[![npm version](https://badge.fury.io/js/%40touchspin%2Freact.svg)](https://badge.fury.io/js/%40touchspin%2Freact)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 React adapter for TouchSpin numeric input spinner - A feature-rich, accessible number input component with increment/decrement buttons.
 
-## ✨ Features
+## Features
 
-- 🎛️ **Multiple Renderers** - Bootstrap 3/4/5, Tailwind CSS, and Vanilla CSS
-- 📱 **Touch & Mouse Support** - Works on desktop and mobile devices
-- ♿ **Accessible** - Full keyboard navigation and screen reader support
-- 🎯 **TypeScript** - Complete type definitions included
-- ⚡ **Performance** - Lightweight and fast
-- 🎨 **Customizable** - Extensive styling and behavior options
-- 🔄 **Reactive & Imperative** - Both declarative props and direct API control
+- Multiple Renderers - Bootstrap 3/4/5, Tailwind CSS, and Vanilla CSS
+- Touch & Mouse Support - Works on desktop and mobile devices
+- Accessible - Full keyboard navigation and screen reader support
+- TypeScript - Complete type definitions included
+- Performance - Lightweight and fast
+- Customizable - Extensive styling and behavior options
+- Reactive & Imperative - Both declarative props and direct API control
 
 ## 📦 Installation
 
@@ -25,7 +22,7 @@ yarn add @touchspin/react @touchspin/core
 pnpm add @touchspin/react @touchspin/core
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ```tsx
 import { useState } from 'react';
@@ -47,7 +44,7 @@ function App() {
 }
 ```
 
-## 🎨 Available Renderers
+## Available Renderers
 
 Choose the renderer that matches your design system:
 
@@ -59,7 +56,7 @@ Choose the renderer that matches your design system:
 | **Bootstrap 3** | `@touchspin/react/bootstrap3` | `@touchspin/renderer-bootstrap3/css` | Bootstrap 3 compatible |
 | **Tailwind** | `@touchspin/react/tailwind` | `@touchspin/renderer-tailwind/css` | Tailwind CSS styling |
 
-## 📋 API Reference
+## API Reference
 
 ### Props
 
@@ -185,7 +182,7 @@ interface TouchSpinHandle {
 }
 ```
 
-## 🎯 Usage Examples
+## Usage Examples
 
 ### Basic Controlled Component
 
@@ -338,7 +335,7 @@ function FormExample() {
 }
 ```
 
-## 🔧 Advanced Configuration
+## Advanced Configuration
 
 ### Custom Core Options
 
@@ -362,7 +359,7 @@ function AdvancedExample() {
 }
 ```
 
-## 🧪 Testing
+## Testing
 
 ```tsx
 import { render, screen } from '@testing-library/react';
@@ -380,7 +377,7 @@ test('increments value', async () => {
 });
 ```
 
-## 🏗️ Development
+## Development
 
 ```bash
 # Install dependencies
@@ -402,23 +399,17 @@ yarn typecheck
 yarn lint
 ```
 
-## 📚 Related Packages
+## Related Packages
 
 - **@touchspin/core** - Core TouchSpin logic
 - **@touchspin/renderer-vanilla** - Vanilla CSS renderer
 - **@touchspin/renderer-bootstrap5** - Bootstrap 5 renderer
 - **@touchspin/renderer-tailwind** - Tailwind CSS renderer
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Please see the main TouchSpin repository for contribution guidelines.
 
-## 📄 License
+## License
 
-MIT © [István Ujházi](https://github.com/istvan-ujjmeszaros)
-
-## 🔗 Links
-
-- [GitHub Repository](https://github.com/istvan-ujjmeszaros/touchspin)
-- [Documentation](https://github.com/istvan-ujjmeszaros/touchspin)
-- [Examples](https://github.com/istvan-ujjmeszaros/touchspin-react-example)
+MIT © Istvan Ujj-Meszaros
