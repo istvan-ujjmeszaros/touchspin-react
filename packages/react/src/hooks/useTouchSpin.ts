@@ -9,23 +9,41 @@ import type { TouchSpinProps } from '../types.js';
 
 export interface UseTouchSpinOptions extends TouchSpinProps {
   renderer: any;
+  onMin?: () => void;
+  onMax?: () => void;
+  onStartSpin?: () => void;
+  onStopSpin?: () => void;
+  onStartUpSpin?: () => void;
+  onStartDownSpin?: () => void;
+  onStopUpSpin?: () => void;
+  onStopDownSpin?: () => void;
+  onSpeedChange?: () => void;
 }
 
 export function useTouchSpin(options: UseTouchSpinOptions) {
   const {
-    value: controlledValue,
-    defaultValue = 0,
-    onChange,
-    min,
-    max,
-    step,
-    decimals,
-    prefix,
-    suffix,
-    disabled,
-    readOnly,
-    coreOptions,
-    renderer,
+  value: controlledValue,
+  defaultValue = 0,
+  onChange,
+  min,
+  max,
+  step,
+  decimals,
+  prefix,
+  suffix,
+  disabled,
+  readOnly,
+  coreOptions,
+  renderer,
+    onMin,
+    onMax,
+    onStartSpin,
+    onStopSpin,
+    onStartUpSpin,
+    onStartDownSpin,
+    onStopUpSpin,
+    onStopDownSpin,
+    onSpeedChange,
   } = options;
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -72,13 +90,37 @@ export function useTouchSpin(options: UseTouchSpinOptions) {
 
     input.addEventListener('change', handleChange);
 
+    // TouchSpin event listeners
+    const eventHandlers = [
+      { event: 'touchspin.on.min', handler: onMin },
+      { event: 'touchspin.on.max', handler: onMax },
+      { event: 'touchspin.on.startspin', handler: onStartSpin },
+      { event: 'touchspin.on.stopspin', handler: onStopSpin },
+      { event: 'touchspin.on.startupspin', handler: onStartUpSpin },
+      { event: 'touchspin.on.startdownspin', handler: onStartDownSpin },
+      { event: 'touchspin.on.stopupspin', handler: onStopUpSpin },
+      { event: 'touchspin.on.stopdownspin', handler: onStopDownSpin },
+      { event: 'touchspin.on.speedchange', handler: onSpeedChange },
+    ];
+
+    eventHandlers.forEach(({ event, handler }) => {
+      if (handler) {
+        input.addEventListener(event, handler);
+      }
+    });
+
     // Cleanup
     return () => {
       input.removeEventListener('change', handleChange);
+      eventHandlers.forEach(({ event, handler }) => {
+        if (handler) {
+          input.removeEventListener(event, handler);
+        }
+      });
       instanceRef.current?.destroy();
       instanceRef.current = null;
     };
-  }, [renderer, coreOptions, isControlled, onChange]); // Only re-mount on fundamental changes
+  }, [renderer, coreOptions, isControlled, onChange, onMin, onMax, onStartSpin, onStopSpin, onStartUpSpin, onStartDownSpin, onStopUpSpin, onStopDownSpin, onSpeedChange]); // Only re-mount on fundamental changes
 
   // Update value when controlled value changes
   useEffect(() => {

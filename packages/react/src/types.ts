@@ -48,6 +48,17 @@ export interface TouchSpinProps {
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
 
+  // TouchSpin Events
+  onMin?: () => void;
+  onMax?: () => void;
+  onStartSpin?: () => void;
+  onStopSpin?: () => void;
+  onStartUpSpin?: () => void;
+  onStartDownSpin?: () => void;
+  onStopUpSpin?: () => void;
+  onStopDownSpin?: () => void;
+  onSpeedChange?: () => void;
+
   // Pass-through props for inner input
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 

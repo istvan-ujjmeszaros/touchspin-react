@@ -45,6 +45,17 @@ export const TouchSpinComponent = forwardRef<TouchSpinHandle, TouchSpinComponent
       onBlur,
       onFocus,
 
+       // TouchSpin Events
+       onMin,
+       onMax,
+       onStartSpin,
+       onStopSpin,
+       onStartUpSpin,
+       onStartDownSpin,
+       onStopUpSpin,
+       onStopDownSpin,
+       onSpeedChange,
+
       // Input props
       inputProps,
 
@@ -71,6 +82,15 @@ export const TouchSpinComponent = forwardRef<TouchSpinHandle, TouchSpinComponent
     if (suffix !== undefined) touchSpinOptions.suffix = suffix;
     if (disabled !== undefined) touchSpinOptions.disabled = disabled;
     if (readOnly !== undefined) touchSpinOptions.readOnly = readOnly;
+    if (onMin !== undefined) touchSpinOptions.onMin = onMin;
+    if (onMax !== undefined) touchSpinOptions.onMax = onMax;
+    if (onStartSpin !== undefined) touchSpinOptions.onStartSpin = onStartSpin;
+    if (onStopSpin !== undefined) touchSpinOptions.onStopSpin = onStopSpin;
+    if (onStartUpSpin !== undefined) touchSpinOptions.onStartUpSpin = onStartUpSpin;
+    if (onStartDownSpin !== undefined) touchSpinOptions.onStartDownSpin = onStartDownSpin;
+    if (onStopUpSpin !== undefined) touchSpinOptions.onStopUpSpin = onStopUpSpin;
+    if (onStopDownSpin !== undefined) touchSpinOptions.onStopDownSpin = onStopDownSpin;
+    if (onSpeedChange !== undefined) touchSpinOptions.onSpeedChange = onSpeedChange;
     if (coreOptions !== undefined) touchSpinOptions.coreOptions = coreOptions;
 
     const { inputRef, instanceRef, currentValue } = useTouchSpin(touchSpinOptions as any);
